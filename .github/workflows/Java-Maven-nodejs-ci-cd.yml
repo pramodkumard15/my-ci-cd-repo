@@ -74,19 +74,19 @@ jobs:
       # Build frontend Docker image
       - name: Build frontend Docker image
         run: |
-          docker build -t your-username/your-frontend-app:latest ./frontend
+          docker build -t pramodkumard15/your-frontend-app:latest ./frontend
 
       # Build backend Docker image
       - name: Build backend Docker image
         run: |
-          docker build -t your-username/your-backend-app:latest ./backend
+          docker build -t pramodkumard15/your-backend-app:latest ./backend
 
       # Push frontend Docker image to Docker Hub
       - name: Push frontend Docker image to Docker Hub
         run: |
-          docker push your-username/your-frontend-app:latest
+          docker push pramodkumard15/your-frontend-app:latest
 
       # Push backend Docker image to Docker Hub
       - name: Push backend Docker image to Docker Hub
         run: |
-          docker push your-username/your-backend-app:latest
+          docker push pramodkumard15/your-backend-app:latest
