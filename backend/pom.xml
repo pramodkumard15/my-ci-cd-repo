@@ -1,34 +1,69 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.example</groupId>
-  <artifactId>my-backend</artifactId>
-  <version>1.0-SNAPSHOT</version>
 
-  <!-- Parent POM for Spring Boot -->
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.4</version> <!-- Specify the version you need -->
-    <relativePath/> <!-- Look for parent POM in the standard location -->
-  </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-  <repositories>
-    <repository>
-      <id>maven-central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-  </repositories>
+    <groupId>com.example</groupId>
+    <artifactId>my-backend</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <dependencies>
-    <!-- Spring Boot Web Starter -->
+    <!-- Parent POM for Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.6</version> <!-- Updated to a newer stable version -->
+        <relativePath/> <!-- Look for parent POM in the standard location -->
+    </parent>
+
+    <dependencies>
+    <!-- Spring Boot Starter Web for building web applications -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-  </dependencies>
 
+    <!-- Spring Boot Starter for general Spring Boot setup -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+    <!-- Spring Boot Test for testing your Spring Boot app -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Spring Boot DevTools for easier development (optional) -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+    </dependency>
+</dependencies>
+
+    <!-- Build Configuration for Spring Boot -->
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin for building and running Spring Boot apps -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.example.MyBackendApplication</mainClass> <!-- Your main application class -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Repositories configuration (if needed) -->
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+    </repositories>
 </project>
